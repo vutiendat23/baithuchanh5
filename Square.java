@@ -1,33 +1,38 @@
-package ke_thua;
+package Shape;
 
 public class Square extends Rectangle{
-	private float size;
-
-	public Square(float length, float width, String color, float size) {
-		super(length, width, color);
-		this.size = size;
-	}
-
-	public float getSize() {
-		return size;
-	}
-
-	public void setSize(float size) {
-		this.size = size;
+	public Square() {
+		
 	}
 	
-	@Override
-	public double getArea() {
-		return size * size;
+	public Square(double side) {
+		super(side, side);
 	}
 	
-	@Override
-	public double getPerimeter() {
-		return 4 * size;
+	public Square(double side, String color) {
+		super(side, side);
+		super.setColor(color);
+	}
+	
+	public double getSide() {
+		return super.getLength();
+	}
+	
+	public void setSide(double side) {
+		super.setLength(side);
+		super.setWidth(side);
+	}
+	
+	public void setWidth(double width) {
+		super.setWidth(width);
+	}
+	
+	public void setLength(double length) {
+		super.setLength(length);
 	}
 	
 	@Override
 	public String toString() {
-		return "Square[" + super.toString();
-	}	
+		return "A Square with Area = " + super.getArea();
+	}
 }

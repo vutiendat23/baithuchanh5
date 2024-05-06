@@ -1,54 +1,53 @@
-package ke_thua;
+package Shape;
 
-public class Rectangle {
-	private float length;
-	private float width;
-	private String color;
+public class Rectangle extends Shape{
+	private double width;
+	private double length;
 	
 	public Rectangle() {
-		
+		this.width = 1;
+		this.length = 1;
+	} 
+	
+	public Rectangle(double width, double length) {
+		this.width = width;
+		this.length = length;
 	}
 	
-	public Rectangle(float length, float width, String color) {
-		this.length = length;
+	public Rectangle(double width, double length, String color) {
+		super(color);
 		this.width = width;
-		this.color = color;
-	}
-
-	public float getLength() {
-		return length;
-	}
-
-	public void setLength(float length) {
 		this.length = length;
 	}
-
-	public float getWidth() {
+	
+	public double getWidth() {
 		return width;
 	}
-
-	public void setWidth(float width) {
+	
+	public void setWidth(double width) {
 		this.width = width;
 	}
-
-	public String getColor() {
-		return color;
-	}
-
-	public void setColor(String color) {
-		this.color = color;
+	
+	public double getLength() {
+		return length;
 	}
 	
+	public void setLength(double length) {
+		this.length = length;
+	}
+	
+	@Override
 	public double getArea() {
 		return width * length;
 	}
 	
 	public double getPerimeter() {
-		return 2 * (width + length);
+		return (width + length) * 2;
 	}
 	
+	@Override
 	public String toString() {
-		return "Rectangle[Length=" + length + "; Width=" + width + "; Color=" + color +
-				"; Area=" + this.getArea() + "; Perimeter=" + this.getPerimeter() + "]";
+		return "A Rectangle with Area = " + this.getArea();
 	}
 }
+	
